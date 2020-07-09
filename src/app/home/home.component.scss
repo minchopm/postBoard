@@ -1,0 +1,38 @@
+.mt-10 {
+  margin-top: 10px;
+}
+
+mat-card {
+  height: 250px;
+  mat-card-actions {
+    position: absolute;
+    top: -6px;
+    right: 10px;
+  }
+  mat-card-content {
+    margin-top: 20px;
+  }
+  mat-card-title {
+    max-width: calc(100% - 20px);
+  }
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.truncate {
+  text-overflow: ellipsis;
+
+  /* Needed to make it work */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.preventOverflow {
+  overflow: hidden;
+}
+

@@ -1,0 +1,18 @@
+<mat-dialog-content [formGroup]="form">
+  <mat-form-field>
+    <mat-label>Author Name</mat-label>
+    <input matInput formControlName="author" required>
+    <mat-error *ngIf="author.invalid">Pleas fill Author Name</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>What would you like to say</mat-label>
+    <textarea matInput formControlName="content" required></textarea>
+    <mat-error *ngIf="content.invalid">Pleas fill the content field</mat-error>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button [disabled]="!form.valid" mat-button [mat-dialog-close]="form.value">
+    {{form.value.date ? 'Update' : 'Create'}}
+  </button>
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

@@ -1,0 +1,16 @@
+﻿<div fxLayout.xs="column" fxLayout="row wrap" fxLayoutGap="10px" ngClass.gt-xs="m-10">
+  <mat-card (click)="openDialog({author: '', content: '', date: null})" class="mt-10" fxFlex.sm="0 1 calc(100%-10px)" fxFlex.md="0 1 calc(50%-10px)" fxFlex.gt-md="0 1 calc(25%-10px)">
+    <mat-card-title>Add new note...</mat-card-title>
+  </mat-card>
+  <mat-card (click)="openDialog(note)" class="mt-10 preventOverflow" *ngFor="let note of notes | async" fxFlex.sm="0 1 calc(100%-10px)" fxFlex.md="0 1 calc(50%-10px)" fxFlex.gt-md="0 1 calc(25%-10px)">
+    <mat-card-actions>
+      <button mat-icon-button (click)="delete($event, note)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+    <mat-card-title class="truncate">{{note.author}}</mat-card-title>
+    <mat-card-content>
+      <h3 class="line-clamp">{{note.content}}</h3>
+    </mat-card-content>
+  </mat-card>
+</div>
